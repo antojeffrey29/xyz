@@ -14,15 +14,15 @@ terraform {
 }
 
 provider "aws" {
-  region = var.aws_region # Replace with your desired AWS region
+  region = "us-east-1" # Replace with your desired AWS region
 }
 
 resource "aws_instance" "free_tier_instance" {
   ami           = "ami-0c02fb55956c7d316" # Amazon Linux 2 AMI (Free Tier Eligible in us-east-1)
-  instance_type = var.instance_type             # Free-tier eligible instance type
+  instance_type = "t2.micro"             # Free-tier eligible instance type
 
   tags = {
-    Name = var.name
+    Name = "Trial Instance"
   }
 
   # Optional: Add security group to allow SSH (port 22)
