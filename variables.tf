@@ -9,5 +9,5 @@ variable "instance_type" {
 }
 
 variable "name" {
-  description = "Name of EC2 Intance"
+  description = "Trial Instance"
 }
